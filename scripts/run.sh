@@ -24,8 +24,8 @@ fi
 
 # Root Directories
 GPUS="8" # number of GPUs
-ROOT_DIR="/workspace/tmp/" # the path that stores generated task samples and model predictions. 
-MODEL_DIR="/workspace/model_ckpts/" # the path that contains individual model folders from Huggingface.
+ROOT_DIR="/workspace/tmp" # the path that stores generated task samples and model predictions. 
+MODEL_DIR="/workspace/model_ckpts" # the path that contains individual model folders from Huggingface.
 ENGINE_DIR="" # the path that contains individual engine folders from TensorRT-LLM.
 
 
