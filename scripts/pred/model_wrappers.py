@@ -54,6 +54,8 @@ class HuggingFaceModel:
 
             print(f'{self.model.transformer.attn_impl=}')
 
+            raise ValueError(f'{self.model.transformer.attn_impl=}')
+
             output = self.model.generate(
                 **inputs,
                 **self.generation_kwargs
