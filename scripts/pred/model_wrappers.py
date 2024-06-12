@@ -52,10 +52,6 @@ class HuggingFaceModel:
             inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
             self.model.transformer.rotary_embedding.inv_freq = self.model.transformer.rotary_embedding.inv_freq.to(dtype=torch.bfloat16)
 
-            print(f'{self.model.transformer.attn_impl=}')
-
-            raise ValueError(f'{self.model.transformer.attn_impl=}')
-
             output = self.model.generate(
                 **inputs,
                 **self.generation_kwargs
