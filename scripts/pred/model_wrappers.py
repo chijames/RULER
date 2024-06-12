@@ -50,6 +50,7 @@ class HuggingFaceModel:
     def __call__(self, prompt: str, **kwargs) -> Dict[str, List[str]]:
         if self.pipeline is None:
             inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
+            self.model.transformer.rotary_embedding.inv_freq = self.model.transformer.rotary_embedding.inv_freq.to(dtype=torch.float64)
             output = self.model.generate(
                 **inputs,
                 **self.generation_kwargs
