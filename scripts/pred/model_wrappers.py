@@ -42,7 +42,7 @@ class HuggingFaceModel:
             )
         except:
             self.pipeline = None
-            self.model = AutoModelForCausalLM.from_pretrained(name_or_path, trust_remote_code=True, device_map="auto", torch_dtype=torch.bfloat16, attn_implementation="flash_attention_2")
+            self.model = AutoModelForCausalLM.from_pretrained(name_or_path, trust_remote_code=True, device_map="auto", torch_dtype=torch.bfloat16, config={'model':{'attn_config':{'attn_impl': 'flash'}}})
             
         self.generation_kwargs = generation_kwargs
         self.stop = self.generation_kwargs.pop('stop')
@@ -50,7 +50,7 @@ class HuggingFaceModel:
     def __call__(self, prompt: str, **kwargs) -> Dict[str, List[str]]:
         if self.pipeline is None:
             inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
-            self.model.transformer.rotary_embedding.inv_freq = self.model.transformer.rotary_embedding.inv_freq.to(dtype=torch.float64)
+            self.model.transformer.rotary_embedding.inv_freq = self.model.transformer.rotary_embedding.inv_freq.to(dtype=torch.bfloat16)
 
             print(f'{self.model.transformer.attn_impl=}')
 
