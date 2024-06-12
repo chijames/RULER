@@ -9,7 +9,6 @@ tiktoken
 tenacity
 transformers
 accelerate
-vllm==0.4.0.post1
 huggingface_hub
 causal-conv1d>=1.2.0
 html2text
