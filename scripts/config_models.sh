@@ -31,7 +31,7 @@ MODEL_SELECT() {
         llama3_long_cont)
             MODEL_PATH="${MODEL_DIR}/llama3_long_cont"
             MODEL_TEMPLATE_TYPE="base"
-            MODEL_FRAMEWORK="vllm"
+            MODEL_FRAMEWORK="hf"
             ;;
         gpt-3.5-turbo)
             MODEL_PATH="gpt-3.5-turbo-0125"
