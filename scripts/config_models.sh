@@ -29,7 +29,7 @@ MODEL_SELECT() {
     
     case $MODEL_NAME in
         llama3_long_cont)
-            MODEL_PATH="${MODEL_DIR}/llama3_long_cont"
+            MODEL_PATH="${MODEL_DIR}/llama_hf_ckpt"
             MODEL_TEMPLATE_TYPE="base"
             MODEL_FRAMEWORK="vllm"
             ;;
