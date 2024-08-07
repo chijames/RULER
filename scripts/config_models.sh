@@ -30,9 +30,9 @@ MODEL_SELECT() {
     ENGINE_DIR=$3
     
     case $MODEL_NAME in
-        llama3.1-405b-instruct)
-            MODEL_PATH="meta-llama/Meta-Llama-3.1-405B-Instruct"
-            MODEL_TEMPLATE_TYPE="meta-chat"
+        moa)
+            MODEL_PATH="/workspace/ckpts/hf_ckpt/"
+            MODEL_TEMPLATE_TYPE="base"
             MODEL_FRAMEWORK="sglang"
             ;;
         llama3.1-405b-instruct-fp8)

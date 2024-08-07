@@ -59,8 +59,8 @@ fi
 ROOT_DIR="benchmark_root/${NUM_SAMPLES}samples" # the path that stores generated task samples and model predictions.
 SEQ_LENGTHS=(
     # 131072
-    128000
-    65536
+    # 128000
+    # 65536
     32768
     16384
     8192
