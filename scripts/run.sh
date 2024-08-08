@@ -61,10 +61,10 @@ SEQ_LENGTHS=(
     # 131072
     # 128000
     # 65536
-    32768
-    16384
-    8192
-    4096
+    32000
+    16000
+    8000
+    4000
 )
 
 # Start server (you may want to run in other container.)
