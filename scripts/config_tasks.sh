@@ -40,7 +40,7 @@ synthetic=(
     "niah_multiquery"
     "vt"
     "cwe"
-    # "fwe"
+    "fwe"
     "qa_1"
     "qa_2"
 )
