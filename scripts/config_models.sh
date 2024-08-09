@@ -30,7 +30,7 @@ MODEL_SELECT() {
     case $MODEL_NAME in
         llama3_long_cont)
             MODEL_PATH="${MODEL_DIR}/llama_hf_ckpt"
-            MODEL_TEMPLATE_TYPE="meta-chat" #"meta-chat" #"base"
+            MODEL_TEMPLATE_TYPE="base" #"meta-chat" #"base"
             MODEL_FRAMEWORK="vllm"
             ;;
         gpt-3.5-turbo)
